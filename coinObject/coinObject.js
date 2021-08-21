@@ -1,9 +1,9 @@
 const coin = {
     state: 0,
 
-    flip: function (state) {
+    flip: function () {
         // Use "this.state" para acessar a propriedade "state".
-        this.state = state;
+        this.state = Math.floor(Math.random() * (2 - 0) + 0);
         // Configure de forma randômica a propriedade “state” do
         // seu objeto moeda. "STATE" deve receber somente os valores 0 ou 1.
     },
@@ -46,8 +46,7 @@ function display20Flips() {
     let corpo = document.getElementById('body');
     corpo.innerHTML = '';
     for (let i = 0; i < 20; i++) {
-        results[i] = Math.floor(Math.random() * (2 - 0) + 0);
-        coin.state = results[i]
+        coin.flip();
         let txt = ` ${coin.toString()}`;
         corpo.append(txt);
     }
@@ -66,8 +65,7 @@ function display20Images() {
     let corpo = document.getElementById('body');
     corpo.innerHTML = '';
     for (let i = 0; i < 20; i++) {
-        results[i] = Math.floor(Math.random() * (2 - 0) + 0);
-        coin.state = results[i];
+        coin.flip();
         let image = coin.toHTML();
         corpo.append(image);
     }
